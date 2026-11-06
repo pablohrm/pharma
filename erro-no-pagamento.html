@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erro no Pagamento - PyPharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <div class="max-w-md mx-auto p-6 mt-10">
+        <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100 text-center">
+            
+            <div class="bg-red-100 text-red-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i data-lucide="alert-circle" class="w-10 h-10"></i>
+            </div>
+
+            <h1 class="text-2xl font-bold text-gray-800 mb-4">Ops! Problema na Transação</h1>
+            
+            <p class="text-gray-600 mb-8">
+                Houve um problema com a transação do seu cartão. <br>
+                <strong>O banco recusou o pagamento.</strong>
+            </p>
+
+            <div class="bg-blue-50 p-6 rounded-xl border border-blue-100 mb-8">
+                <p class="text-blue-800 font-semibold mb-4">
+                    Para não perder seu pedido, realize o pagamento via PIX para liberação imediata.
+                </p>
+                
+                <!-- ESPAÇO PARA O QR CODE -->
+                <div class="bg-white p-4 rounded-lg inline-block shadow-sm mb-4">
+                    <img src="SUA_URL_DO_QRCODE_AQUI" alt="QR Code Pix" class="w-48 h-48 mx-auto">
+                </div>
+
+                <div class="text-sm text-gray-500 break-all font-mono bg-gray-100 p-2 rounded">
+                    SUA_CHAVE_PIX_AQUI
+                </div>
+            </div>
+
+            <a href="index.html" class="text-blue-600 text-sm font-medium hover:underline">
+                Tentar outro cartão
+            </a>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
