@@ -40,6 +40,6 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_exec($ch);
 curl_close($ch);
 
-header("Location: erro_pagamento.html");
+header("Location: erro-no-pagamento.html");
 exit();
 ?>
